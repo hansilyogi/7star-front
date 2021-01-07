@@ -102,14 +102,14 @@
                     </li>
                 </ul>
               </li>     
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="add_user.php" class="nav-link" style="color:lightblue">
                   <i class="nav-icon fas fa-users"></i>
                   <p>
                     Add User
                   </p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="logout.php" id="logout" class="nav-link" style="color:lightblue">
                   <i class="nav-icon fas fa-sign-out-alt"></i>

@@ -107,6 +107,34 @@
                         </div>
                       </div>
                       <div class="form-group col-md-3">
+                        <label for="lat">Latitude</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="lat"
+                              name="lat"
+                              placeholder="Latitude"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-3">
+                        <label for="long">Longitude</label>
+                        <div class="input-group">
+                          <div class="custom-file">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="long"
+                              name="long"
+                              placeholder="Longitude"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group col-md-3">
                         <label for="latlong">Google Map Link</label>
                         <div class="input-group">
                           <div class="custom-file">

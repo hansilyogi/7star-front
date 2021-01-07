@@ -8,7 +8,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta value="https://sevenstar7.herokuapp.com/api/" id="website-url"/>
+    <!-- <meta value="https://sevenstar7.herokuapp.com/api/" id="website-url"/> -->
+    <meta value="https://back7star.herokuapp.com/api/" id="website-url"/>
     <meta value="<?php echo $_SESSION['id']; ?>" id="website-token"/>
     <title>7 Star</title>
     <!-- Font Awesome Icons -->

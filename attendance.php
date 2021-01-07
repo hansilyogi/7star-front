@@ -30,7 +30,7 @@
               </div>
               <div class="card-body">
                 <div class="row">
-                <div class="col-3">
+                  <!-- <div class="col-3">
                     <label>Day Filter</label>
                     <select class="form-control" id="day-filter">
                     <option value="All">All</option>
@@ -42,7 +42,7 @@
                       <option value="Friday">Friday</option>
                       <option value="Saturday">Saturday</option>
                     </select>
-                  </div>
+                  </div> -->
                   <div class="col-3">
                     <label>Date Filter</label>                    
                     <input type="date" class="form-control" id="startdate" name="startdate">                    

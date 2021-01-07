@@ -16,21 +16,25 @@
               
             <div class="row"> 
               <div class="col-lg-4 col-6">
+                <a href="present.php">
                 <div class="small-box" style="background-color:#06F6C3">
-                  <div class="inner">
-                    <h3><label  id="present" name="present" text="0"></label></h3>
-                    <h4><b>TODAY PRESENT</b></h4>
+                  <div class="inner" style="text-align:center">
+                    <h3><label style="color:black" id="present" name="present" text="0"></label></h3>
+                    <h4><b style="color:black">TODAY PRESENT</b></h4>
                   </div>
                 </div>
+                </a>
               </div>
 
               <div class="col-lg-4 col-6">
+                <a href="absent.php">
                 <div class="small-box" style="background-color:#06F6C3">
-                  <div class="inner">
-                    <h3><label  id="absent" name="absent" text="0"></label></h3>
-                    <h4><b>TODAY ABSENT</b></h4>
+                  <div class="inner" style="text-align:center">
+                    <h3><label style="color:black" id="absent" name="absent" text="0"></label></h3>
+                    <h4><b style="color:black">TODAY ABSENT</b></h4>
                   </div>
                 </div>
+                </a>
               </div>
 
               <!-- <div class="col-lg-4 col-6">
@@ -51,31 +55,35 @@
                 </div>
               </div> -->
 
-              <div class="col-lg-4 col-6">
+              <!-- <div class="col-lg-4 col-6">
                 <div class="small-box" style="background-color:#06F6C3">
                   <div class="inner">
                     <h3><label  id="inoffice" name="present" text="0"></label></h3>
                     <h4><b>TODAY IN OFFICE</b></h4>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="col-lg-4 col-6">
-                <div class="small-box" style="background-color:#06F6C3">
-                  <div class="inner">
-                    <h3><label  id="outoffice" name="present" text="0"></label></h3>
-                    <h4><b>TODAY OUT OFFICE</b></h4>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-4 col-6">
+                <a>
                 <div class="small-box" style="background-color:#06F6C3">
                   <div class="inner" style="text-align:center">
-                    <h3><label  id="total" name="present" text="0"></label></h3>
-                    <h4><b>TOTAL EMPLOYEE</b></h4>
+                    <h3><label style="color:black" id="outoffice" name="present" text="0"></label></h3>
+                    <h4><b style="color:black">TODAY OUT OFFICE</b></h4>
                   </div>
                 </div>
+                </a>
+              </div>
+
+              <div class="col-lg-4 col-6">
+                <a>
+                <div class="small-box" style="background-color:#06F6C3">
+                  <div class="inner" style="text-align:center">
+                    <h3><label style="color:black" id="total" name="total" text="0"></label></h3>
+                    <h4><b style="color:black">TOTAL EMPLOYEE</b></h4>
+                  </div>
+                </div>
+                </a>
               </div>
             </div>
           </div>

@@ -81,7 +81,7 @@ $(document).ready(function () {
                 ">" +
                 data.Data[i].Name +
                 " - " +
-                data.Data[i].StartTime +
+                data.Data[i].StartTime +  
                 " - " +
                 data.Data[i].EndTime +
                 "</option>"
@@ -89,6 +89,25 @@ $(document).ready(function () {
           }
         }
       },
+    });
+  }
+
+  function deletemp(id){
+    $.ajax({
+      type : "POST",
+      url : $("#website-url").attr("value") + "delEmpolyee",
+      data : {"id" : id},
+      dataType : "json",
+      cache : false,
+      beforeSend : function() {
+        $("#displaydata").html(
+          '<tr><td colspan="5" class="text-center font-weight-bold">Loading...</td></tr></center>'
+        );
+      },
+      success : function(data){
+        console.log(data);
+        location.reload();
+      }
     });
   }
 
@@ -104,7 +123,8 @@ $(document).ready(function () {
           '<tr><td colspan="5" class="text-center font-weight-bold">Loading...</td></tr></center>'
         );
       },
-      success: function (data) {       
+      success: function (data) {     
+        console.log(data);
         if (data.isSuccess == true) {
           $("#displaydata").html("");
           for (i = 0; i < data.Data.length; i++) {
@@ -121,7 +141,7 @@ $(document).ready(function () {
                 parseInt(i+1)+"</td><td>"+
                 data.Data[i]["Name"] +
                 "</td><td>" +
-                data.Data[i]["Department"] +
+                data.Data[i]["SubCompany"]["Name"] +
                 "</td><td>" +
                 data.Data[i]["Timing"]["StartTime"] +" To " + data.Data[i]["Timing"]["EndTime"] +
                 "</td><td>" +
@@ -170,6 +190,9 @@ $(document).ready(function () {
       cache: false,
       success: function (data) {
         if (data.isSuccess == true) {
+          console.log("Top Start");
+          window.scrollTo(0, 0);
+          console.log("Top End");
           UPDATEID = id;
           time =
             data.Data[0].Timing == undefined ? TIMING : data.Data[0].Timing;
@@ -188,33 +211,33 @@ $(document).ready(function () {
           $("#married").val(data.Data[0].MartialStatus);
           // $("#joindate").val(RevDateformate(data.Data[0].JoinDate));
           $("#subcompany").val(data.Data[0].SubCompany);
-          if(data.Data[0].ConfirmationDate.includes("-")){
-            $("#confirmationdate").val(data.Data[0].ConfirmationDate);
-          }else{
-            $("#confirmationdate").val(RevDateformate(data.Data[0].ConfirmationDate));
-          }
-          if(data.Data[0].TerminationDate.includes("-")){
-            $("#terminationdate").val(data.Data[0].TerminationDate);
+          // if(data.Data[0].ConfirmationDate.includes("-")){
+          //   $("#confirmationdate").val(data.Data[0].ConfirmationDate);
+          // }else{
+          //   $("#confirmationdate").val(RevDateformate(data.Data[0].ConfirmationDate));
+          // }
+          // if(data.Data[0].TerminationDate.includes("-")){
+          //   $("#terminationdate").val(data.Data[0].TerminationDate);
 
-          } else{
-            $("#terminationdate").val(RevDateformate(data.Data[0].TerminationDate));
-          } 
-          if((data.Data[0].JoinDate).includes("-")){
-            $("#joindate").val(data.Data[0].JoinDate);
+          // } else{
+          //   $("#terminationdate").val(RevDateformate(data.Data[0].TerminationDate));
+          // } 
+          // if((data.Data[0].JoinDate).includes("-")){
+          //   $("#joindate").val(data.Data[0].JoinDate);
 
-          } else{
-            $("#joindate").val(RevDateformate(data.Data[0].JoinDate));
-          }
+          // } else{
+          //   $("#joindate").val(RevDateformate(data.Data[0].JoinDate));
+          // }
           $("#prohibition").val(data.Data[0].Prohibition);
           $("#department").val(data.Data[0].Department);
           $("#designation").val(data.Data[0].Designation);
           $("#idtype").val(data.Data[0].IDtype);
           $("#idnumber").val(data.Data[0].IDNumber);
           $("#timing").val(time);
-          window.scrollTo(0, 0);
           $("#btn-submit-on").html(
             "<button type='submit' class='btn btn-success' id='btn-update'>Update</button>" +
-            "<button type='submit' class='btn btn-danger ml-2' id='btn-cancel'>Cancel</button>"
+            "<button type='submit' class='btn btn-primary ml-2' id='btn-cancel'>Cancel</button>"+
+            "<button type='submit' class='btn btn-danger ml-2' id='btn-delete'>Delete</button>"
           );
         }
       },
@@ -228,6 +251,30 @@ $(document).ready(function () {
       "<button type='submit' class='btn btn-success' id='btn-submit'>Submit</button>" +
         "<button type='submit' class='btn btn-danger ml-2' id='btn-cancel'>Cancel</button>"
     );
+  });
+
+  $(document).on("click", "#btn-delete", function(e){
+    e.preventDefault();
+    $.ajax({
+      type : "POST",
+      url : $("#website-url").attr("value") + "delEmpolyee",
+      data : {"id" : UPDATEID},
+      dataType : "json",
+      cache : false,
+      beforeSend : function() {
+        $("#displaydata").html(
+          '<tr><td colspan="5" class="text-center font-weight-bold">Loading...</td></tr></center>'
+        );
+      },
+      success : function(data){
+        console.log(data);
+        location.reload();
+        $("#btn-submit-on").html(
+          "<button type='submit' class='btn btn-success' id='btn-submit'>Submit</button>" +
+            "<button type='submit' class='btn btn-danger ml-2' id='btn-cancel'>Cancel</button>"
+        );
+      },
+    });
   });
 
   $(document).on("click", "#btn-update", function (e) {

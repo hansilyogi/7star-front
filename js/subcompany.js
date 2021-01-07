@@ -124,7 +124,7 @@ $(document).ready(function () {
   $(document).on("click", "#btn-update", function (e) {
     e.preventDefault();
     if (UPDATEID !== undefined) {
-        console.log($('#latlong').val());
+        // console.log($('#latlong').val());
         if($('#latlong').val() != ""){
             var lat = $("#latlong").val().split("@")[1].split(",")[0];
             var long = $("#latlong").val().split("@")[1].split(",")[1];   
@@ -142,8 +142,8 @@ $(document).ready(function () {
           Email: $("#email").val(),
           GSTIN: $("#gstin").val(),
           companyid: $("#company").val(),
-          lat: lat,
-          long: long,
+          lat: $("#lat").val(),
+          long: $("#long").val(),
           googlelink: $("#latlong").val(),
         },
         dataType: "json",
@@ -217,8 +217,8 @@ $(document).ready(function () {
         Email: $("#email").val(),
         GSTIN: $("#gstin").val(),
         companyid: $("#company").val(),
-        lat: lat,
-        long: long,
+        lat: $("#lat").val(),
+        long: $("#long").val(),
         googlelink: $("#latlong").val(),
       },
       dataType: "json",

@@ -48,7 +48,7 @@
                           class="form-control"
                           id="middlename"
                           name="middlename"
-                          placeholder="Middle Name" required
+                          placeholder="Middle Name"
                         />
                       </div>
                       <div class="form-group col-md-3">
@@ -84,7 +84,7 @@
                               type="Date"
                               class="form-control"
                               id="dob"
-                              name="dob" required
+                              name="dob"
                             />
                           </div>
                         </div>
@@ -112,7 +112,7 @@
                               class="form-control"
                               id="mail"
                               name="mail"
-                              placeholder="Mail Id" required
+                              placeholder="Mail Id"
                             />
                           </div>
                         </div>
@@ -124,7 +124,7 @@
                             <select
                               class="form-control"
                               id="married"
-                              name="married" required
+                              name="married"
                             >
                               <option value="Single">Single</option>
                               <option value="Married">Married</option>
@@ -140,7 +140,7 @@
                               type="Date"
                               class="form-control"
                               id="joindate"
-                              name="joindate" required
+                              name="joindate"
                             />
                           </div>
                         </div>
@@ -153,7 +153,7 @@
                               type="text"
                               class="form-control"
                               id="terminationdate"
-                              name="terminationdate" required
+                              name="terminationdate"
                             />
                           </div>
                         </div>
@@ -165,7 +165,7 @@
                           class="form-control"
                           id="prohibition"
                           name="prohibition"
-                          placeholder="Prohibition Period(Months)" required
+                          placeholder="Prohibition Period(Months)"
                         />
                       </div>
                       <div class="form-group col-md-3">
@@ -187,7 +187,7 @@
                               class="form-control"
                               id="department"
                               name="department"
-                              placeholder="Department" required
+                              placeholder="Department"
                             />
                           </div>
                         </div>
@@ -201,7 +201,7 @@
                               class="form-control"
                               id="designation"
                               name="designation"
-                              placeholder="Designation" required
+                              placeholder="Designation"
                             />
                           </div>
                         </div>
@@ -215,7 +215,7 @@
                               class="form-control"
                               id="idtype"
                               name="idtype"
-                              placeholder="ID Type" required
+                              placeholder="ID Type"
                             />
                           </div>
                         </div>
@@ -229,7 +229,7 @@
                               class="form-control"
                               id="idnumber"
                               name="idnumber"
-                              placeholder="ID Number" required
+                              placeholder="ID Number"
                             />
                           </div>
                         </div>
@@ -276,7 +276,7 @@
             <div class="card">
               <div class="card-header row">
                 <h3 class="card-title col-9">Display Data</h3>
-                <input type="text" class="form-control col-3" id="txt_emp" name="txt_emp" placeholder="Search Employee"/>
+                <input type="text" class="form-control col-3" id="txt_emp" name="txt_emp" placeholder="Search Anything"/>
               </div>
               <!-- /.card-header -->
               <table class="table table-bordered">
@@ -287,7 +287,7 @@
                     <th>Department</th>
                     <th>Shift</th>
                     <th>Action</th>
-                    <th>View More</th>                    
+                    <th>View More</th>                
                   </tr>
                 </thead>
                 <tbody id="displaydata"></tbody>

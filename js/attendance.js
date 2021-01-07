@@ -38,7 +38,7 @@ $(document).ready(function () {
     loadsingleemployee();
   } else {
     $(".card-danger").css("display", "block");
-    loaddata();
+    // loaddata();
   }
   loadarea();
 
@@ -112,6 +112,7 @@ $(document).ready(function () {
     ed = convertdatetostring($("#enddate").val());
     day = $("#day-filter").val();
     status = $("#status-filter").val();
+    console.log("1");
     $.ajax({
       type: "POST",
       url: $("#website-url").attr("value") + "attendance",
@@ -132,10 +133,14 @@ $(document).ready(function () {
         );
       },
       success: function (data) {
+        console.log("1 - i")
         if (data.isSuccess == true) {
+          console.log(data);
           $("#displaydata").html("");
           for (i = 0; i < data.Data.length; i++) {
             checkstring = "http://www.google.com/maps/place/";
+            data.Data[i].EmployeeId["Name"] = 
+              data.Data[i].EmployeeId["Name"] == null ? "-" : data.Data[i].EmployeeId["Name"];
             data.Data[i]["Day"] =
               data.Data[i]["Day"] == undefined ? "-" : data.Data[i]["Day"];
             data.Data[i]["Time"] =
@@ -215,6 +220,7 @@ $(document).ready(function () {
   }
 
   function loadarea() {
+    console.log("2 -i");
     $.ajax({
       type: "POST",
       url: $("#website-url").attr("value") + "attendance",

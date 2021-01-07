@@ -67,7 +67,7 @@
                             <input type="text" class="form-control" id="edate">
                         </div>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer" id="btn-submit-on">
                       <button
                         type="button"
                         class="btn btn-success"
@@ -89,17 +89,21 @@
                 <h3 class="card-title col-9">Display Data</h3>
                 <input type="text" class="form-control col-3" id="txt_searchemployee" name="txt_searchemployee" placeholder="Search Anything"/>
               </div>
-                <div class="form-group col-md-6">
-                    <label>Total Days :<spam id="totaldays"></spam></label> <br>
-                    <label>Total Present :<spam id="totalpresent"></spam></label> <br>
-                    <label>Total Absent :<spam id="totalabsent"></spam></label> 
-                    <!-- <input readonly type="text" class="form-control" id="countp"> -->
-                </div>
+              <!-- <div class="form-group col-md-6">
+                <label>Total Days :<spam id="totaldays"></spam></label> <br>
+                <label>Total Present :<spam id="totalpresent"></spam></label> <br>
+                <label>Total Absent :<spam id="totalabsent"></spam></label> 
+              </div> -->
               <div class="card-body">
+                <!-- <div class="form-group col-md-6">
+                  <label>Total Days :<spam id="totaldays"></spam></label> <br>
+                  <label>Total Present :<spam id="totalpresent"></spam></label> <br>
+                  <label>Total Absent :<spam id="totalabsent"></spam></label> 
+                </div> -->
                 <table class="table table-bordered" style="table-layout: fixed;">
                   <thead>
                     <tr>
-                      <th>EMP-ID</th>
+                      <th>EMP-Name</th>
                       <th>Day</th>
                       <th>Date</th>
                       <th>Attendence</th>
@@ -107,13 +111,15 @@
                       <th>Duty-In Time</th>
                       <th>Duty-Out Area</th>
                       <th>Duty-Out Time</th>
-                      <!-- <th>Area of Attendance</th> -->
-                      <!-- <th>Status</th> -->
+                      <th>Hours Worked</th>
                     </tr>
                   </thead>
                   <tbody id="displaydata_e"></tbody>
                 </table>
               </div>
+
+              <!-- <div class="card-body" id="displaydata_e">
+              </div> -->
               <!-- /.card-body -->
             </div>
           </div>

@@ -70,7 +70,7 @@ console.log(sessionStorage);
     console.log("end date --------" + e_date);
     $.ajax({
       type: "POST",
-      url: "http://localhost:3000/api/getEmpAttendance",
+      url: $("#website-url").attr("value") + "getEmpAttendance",
       data: { date : s_date, date2 : e_date},
       dataType: "json",
       cache: false,
