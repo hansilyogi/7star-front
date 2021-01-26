@@ -95,12 +95,13 @@
                 <label>Total Absent :<spam id="totalabsent"></spam></label> 
               </div> -->
               <div class="card-body">
+                <button type="button" id="btn-excel" style="float:right" class="btn btn-app bg-success"><i class="fas fa-file-excel"></i>  Export to Excel</button><br>
                 <!-- <div class="form-group col-md-6">
                   <label>Total Days :<spam id="totaldays"></spam></label> <br>
                   <label>Total Present :<spam id="totalpresent"></spam></label> <br>
                   <label>Total Absent :<spam id="totalabsent"></spam></label> 
                 </div> -->
-                <table class="table table-bordered" style="table-layout: fixed;">
+                <table id="example" class="table table-bordered" style="table-layout: fixed;">
                   <thead>
                     <tr>
                       <th>EMP-Name</th>

@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     // var URL = "http://localhost:8080/";
     var URL = "http://demo.webnappmaker.in/7star/";
+      // var URL = "https://star7-front.herokuapp.com/";
     // BASE_URL = "https://star7-backend.herokuapp.com/";
     BASE_URL = "https://back7star.herokuapp.com/";
 
@@ -10,7 +11,7 @@ $(document).ready(function () {
       console.log("1");
       $.ajax({
         type : "POST",
-        url : "https://star7-backend.herokuapp.com/" + "api/adminlogin",
+        url : BASE_URL + "api/adminlogin",
         data : {
           "username" : $("#username").val(),
           "password" : $("#password").val(),

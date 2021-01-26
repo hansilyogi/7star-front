@@ -7,6 +7,13 @@ $(document).ready(function () {
 
   loadcompany();
 
+  $("#btn-excel").on("click",function(){
+    $("#example").table2excel({
+      exclude: ".noExport",
+      filename: "name-of-the-file.xls"
+    });
+  });
+
   function loadcompany() {
     $.ajax({
       type: "POST",
@@ -159,6 +166,7 @@ $(document).ready(function () {
         $.ajax({
           type: "POST",
           url: $("#website-url").attr("value") + "getEmpAttendance",
+          // url: "http://localhost:3000/api/" + "getEmpAttendance",
           data: { "date" : s_date,"date2" : e_date, "SubCompany" :subid},
           dataType: "json",
           cache: false,
@@ -283,12 +291,13 @@ $(document).ready(function () {
                       else{
                         v = "A";
                       }
-                      timestart = moment(response.Data[i].DutyIn.Time, "HH:mm:ss a");
-                      timeend = moment(response.Data[i].DutyOut[0].Time, "HH:mm:ss a");
+                      timestart = moment(response.Data[j].DutyIn.Time, "HH:mm:ss a");
+                      timeend = moment(response.Data[j].DutyOut[0].Time, "HH:mm:ss a");
                       var duration = moment.duration(timeend.diff(timestart));
                       var hours = parseInt(duration.asHours());
                       var minutes = parseInt(duration.asMinutes())%60;
                       timediff = hours + ' hour and '+ minutes+' minutes.';
+                      console.log("diff : "+duration);
                       // var v = response.Data[j].DutyOut[0].Time == undefined ? "A" : "P";
                       var outtime = response.Data[j].DutyOut[0].Time == undefined ? "" : response.Data[j].DutyOut[0].Time;
                       var outArea = response.Data[j].DutyOut[0].Area == undefined ? "" : response.Data[j].DutyOut[0].Area;

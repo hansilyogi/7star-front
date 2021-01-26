@@ -284,7 +284,7 @@
                   <tr>
                     <th>Sr.No</th>
                     <th>Name</th>
-                    <th>Department</th>
+                    <th>Sub-Company</th>
                     <th>Shift</th>
                     <th>Action</th>
                     <th>View More</th>                
